@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: app1-nginx
-  namespace: default
+  namespace: nginx
   labels:
     app: app1-nginx
     version: v1
@@ -24,7 +24,7 @@ spec:
       annotations:
         prometheus.io/scrape: "false"
     spec:
-      serviceAccountName: default
+      serviceAccountName: nginx-service-account
       containers:
       - name: nginx
         image: nginx:1.25-alpine
