@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app1-nginx
-  namespace: nginx
+  name: nginx
+  namespace: cxb-azargo-pre
   labels:
-    app: app1-nginx
+    app: nginx
     version: v1
 spec:
   replicas: 3
