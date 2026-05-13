@@ -15,11 +15,11 @@ spec:
       maxUnavailable: 0
   selector:
     matchLabels:
-      app: app1-nginx
+      app: nginx
   template:
     metadata:
       labels:
-        app: app1-nginx
+        app: nginx
         version: v1
       annotations:
         prometheus.io/scrape: "false"
@@ -89,13 +89,13 @@ spec:
       volumes:
       - name: nginx-config
         configMap:
-          name: app1-nginx-config
+          name: nginx-config
           items:
           - key: nginx.conf
             path: nginx.conf
       - name: html
         configMap:
-          name: app1-nginx-config
+          name: nginx-config
           items:
           - key: index.html
             path: index.html
@@ -115,5 +115,5 @@ spec:
                 - key: app
                   operator: In
                   values:
-                  - app1-nginx
+                  - nginx
               topologyKey: kubernetes.io/hostname
